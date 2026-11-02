@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portia convierte tu GitHub en una historia profesional que puedes enseñar." />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com https://api.microlink.io; img-src 'self' data: https://avatars.githubusercontent.com https://opengraph.githubassets.com https://raw.githubusercontent.com https://image.thum.io https://*.microlink.io; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'" />
+    <title>portia — Tu código ya cuenta tu historia</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-portia" viewBox="0 0 32 32"><rect x="7" y="5" width="18" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 11h10M11 15h7M11 20h3l2 2 4-5" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20 15.2A8.3 8.3 0 0 1 8.8 4 8.3 8.3 0 1 0 20 15.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 20 20"><path d="M3 10h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .3C5.37.3 0 5.67 0 12.3c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.42-1.07-1.03-1.35-1.03-1.35-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.47 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.69.83.57A12.01 12.01 0 0 0 24 12.3C24 5.67 18.63.3 12 .3Z" fill="currentColor"/></symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M4.6 3.2a1.65 1.65 0 1 1 0 3.3 1.65 1.65 0 0 1 0-3.3ZM3.1 8.2h3V21h-3V8.2ZM8 8.2h2.9v1.75h.04c.4-.76 1.38-2.08 3.64-2.08 3.9 0 4.62 2.56 4.62 5.9V21h-3v-6.4c0-1.53-.03-3.5-2.14-3.5-2.14 0-2.47 1.67-2.47 3.39V21H8V8.2Z" fill="currentColor"/></symbol>
+      <symbol id="icon-form" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 8h8M8 12h5M8 16h3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-notion" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M8 16V8l8 8V8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"/></symbol>
+      <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 2 1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z" fill="currentColor"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5.5c0 4.6-3.2 7.7-8 9.5-4.8-1.8-8-4.9-8-9.5V6l8-3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.5 12 2.2 2.2 4.8-4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    </svg>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Navegación principal">
+        <a class="brand" href="#top" aria-label="Portia, inicio">
+          <span class="brand-mark" aria-hidden="true"><svg><use href="#icon-portia"></use></svg></span>
+          <span>portia</span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Abrir menú</span><i></i><i></i><i></i>
+        </button>
+        <button class="theme-toggle nav-theme-toggle" type="button" aria-label="Cambiar tema">
+          <span class="theme-switch"><svg class="theme-icon"><use href="#icon-sun"></use></svg><span class="theme-switch-knob"></span><svg class="theme-icon moon"><use href="#icon-moon"></use></svg></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#integraciones">Integraciones</a>
+          <a href="#plantillas">Plantillas</a>
+          <a href="#precios">Precios</a>
+          <a href="#faq">FAQ</a>
+          <button class="button button-ghost auth-trigger" type="button">Entrar</button>
+          <button class="button button-primary auth-trigger" type="button">Crear cuenta</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> Portfolio para desarrolladores</div>
+            <h1>Tu código ya cuenta <em>tu historia.</em></h1>
+            <p class="hero-lede">De tu GitHub a un portfolio que habla de lo que haces. Elige qué enseñar, dale tu estilo y tenlo listo en minutos.</p>
+            <form class="demo-form" id="demo-form">
+              <label for="github-user">Prueba con tu usuario de GitHub</label>
+              <div class="input-row">
+                <div class="input-wrap"><span aria-hidden="true">@</span><input id="github-user" name="github-user" autocomplete="off" placeholder="tu-usuario" required pattern="[A-Za-z0-9-]+" /></div>
+                <button class="button button-primary" type="submit">Ver mi preview <svg class="button-icon"><use href="#icon-arrow"></use></svg></button>
+              </div>
+              <p class="form-note"><svg class="inline-icon"><use href="#icon-shield"></use></svg> Sin cuenta. Sin IA. Solo una vista previa de tus datos públicos.</p>
+              <p class="form-error" id="demo-error" role="alert"></p>
+            </form>
+            <div class="hero-proof">
+              <div class="avatar-stack" aria-hidden="true"><span>LC</span><span>MG</span><span>AR</span><span>+</span></div>
+              <span>Ya lo están probando <strong>120+ desarrolladores</strong></span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="Vista previa de un portfolio generado por Portia">
+            <div class="glow"></div>
+            <div class="portfolio-card">
+              <div class="card-topbar"><span class="window-dots"><i></i><i></i><i></i></span><span class="preview-label">PREVIEW</span><button class="card-more" aria-label="Más opciones">···</button></div>
+              <div class="portfolio-inner">
+                <div class="profile-row"><div class="profile-avatar">JD</div><div><h2>Javier Díaz</h2><p>Frontend developer · Málaga</p></div><span class="available">Disponible</span></div>
+                <div class="profile-intro"><span class="accent-line"></span><p>Construyo interfaces que hacen que las cosas complejas se sientan sencillas.</p></div>
+                <div class="mini-stats"><div><strong>18</strong><span>repositorios</span></div><div><strong>6</strong><span>tecnologías</span></div><div><strong>4</strong><span>años creando</span></div></div>
+                <div class="project-heading"><span>Proyectos destacados</span><a href="#plantillas">Ver todos <span>→</span></a></div>
+                <div class="project-list"><article><div class="project-icon purple">◈</div><div><strong>open-source-dashboard</strong><p>React · TypeScript · API</p></div><span class="stars">☆ 24</span></article><article><div class="project-icon orange">⌁</div><div><strong>malaga-tech-calendar</strong><p>Vite · Tailwind · Events</p></div><span class="stars">☆ 17</span></article></div>
+              </div>
+            </div>
+            <div class="floating-note note-top"><span class="note-icon"><svg><use href="#icon-spark"></use></svg></span><div><strong>Hecho para ti</strong><small>Contenido basado en tu GitHub</small></div></div>
+            <div class="floating-note note-bottom"><span class="check"><svg><use href="#icon-shield"></use></svg></span><div><strong>Tu portfolio está listo</strong><small>Vista previa generada</small></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip"><div class="container trust-inner"><span>Una forma más sencilla de contar lo que haces</span><div><span class="trust-item"><svg class="inline-icon"><use href="#icon-github"></use></svg> Datos reales de GitHub</span><span class="trust-item"><svg class="inline-icon"><use href="#icon-grid"></use></svg> Tú decides qué mostrar</span><span class="trust-item"><svg class="inline-icon"><use href="#icon-shield"></use></svg> Sin inventar logros</span></div></div></section>
+
+      <section class="section integrations-section" id="integraciones">
+        <div class="container integrations-grid">
+          <div class="integrations-copy"><span class="eyebrow">Más contexto, mejores resultados</span><h2>Conecta lo que<br /><em>también habla de ti.</em></h2><p>Añade información de tus herramientas profesionales y académicas para generar formularios más completos, sin repetir datos a mano.</p><div class="integration-progress"><div><span>Perfil de generación</span><strong id="integration-count">1 de 4 conectadas</strong></div><div class="progress-track"><span id="integration-progress"></span></div></div></div>
+          <div class="integration-list">
+            <article class="integration-card connected" data-integration="github"><span class="integration-logo github-logo"><svg><use href="#icon-github"></use></svg></span><div><strong>GitHub</strong><small>Proyectos, tecnologías y actividad</small></div><button class="integration-action" type="button">Conectado <span>✓</span></button></article>
+            <article class="integration-card" data-integration="linkedin"><span class="integration-logo linkedin-logo"><svg><use href="#icon-linkedin"></use></svg></span><div><strong>LinkedIn</strong><small>Experiencia, estudios y titulares</small></div><button class="integration-action" type="button">Añadir <svg class="button-icon"><use href="#icon-arrow"></use></svg></button></article>
+            <article class="integration-card" data-integration="notion"><span class="integration-logo notion-logo"><svg><use href="#icon-notion"></use></svg></span><div><strong>Notion</strong><small>Notas, casos y documentación</small></div><button class="integration-action" type="button">Añadir <svg class="button-icon"><use href="#icon-arrow"></use></svg></button></article>
+            <article class="integration-card" data-integration="profile"><span class="integration-logo profile-logo"><svg><use href="#icon-form"></use></svg></span><div><strong>Datos propios</strong><small>Tu bio, objetivos y preferencias</small></div><button class="integration-action" type="button">Añadir <svg class="button-icon"><use href="#icon-arrow"></use></svg></button></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="como-funciona">
+        <div class="container">
+          <div class="section-heading centered"><span class="eyebrow">Cómo funciona</span><h2>Menos tiempo editando.<br /><em>Más tiempo construyendo.</em></h2><p>Portia ordena lo que ya has hecho para que puedas enseñarlo con claridad.</p></div>
+          <div class="steps"><article class="step"><span class="step-number">01</span><div class="step-icon"><svg><use href="#icon-github"></use></svg></div><h3>Conecta tu GitHub</h3><p>Importamos tu perfil, proyectos y tecnologías. Solo usamos datos públicos y tú tienes el control.</p></article><article class="step"><span class="step-number">02</span><div class="step-icon"><svg><use href="#icon-grid"></use></svg></div><h3>Elige tu historia</h3><p>Selecciona los repositorios y secciones que mejor representan tu forma de trabajar.</p></article><article class="step"><span class="step-number">03</span><div class="step-icon"><svg><use href="#icon-spark"></use></svg></div><h3>Hazlo tuyo</h3><p>Escoge una plantilla, ajusta los textos y comparte un portfolio que se parece a ti.</p></article></div>
+        </div>
+      </section>
+
+      <section class="section" id="plantillas">
+        <div class="container template-grid"><div class="template-copy"><span class="eyebrow">Tu estilo, tus reglas</span><h2>Una base sólida.<br /><em>Tu propia voz.</em></h2><p>Empieza con una plantilla limpia y deja que tu trabajo sea el protagonista. Cambia de estilo sin perder tu contenido.</p><a class="text-link" href="#precios">Explorar plantillas <span>→</span></a></div><div class="template-showcase"><div class="template-switcher"><button class="template-option active" data-template="minimal">Minimal</button><button class="template-option" data-template="grid">Grid</button><button class="template-option" data-template="line">Line</button></div><div class="template-preview" id="template-preview"><div class="mock-sidebar"><span class="mock-logo">j.d</span><span class="mock-nav active"></span><span class="mock-nav"></span><span class="mock-nav"></span></div><div class="mock-main"><span class="mock-kicker">PRODUCT DESIGNER</span><strong>Ideas claras,<br /><i>productos útiles.</i></strong><div class="mock-blocks"><span></span><span></span><span></span></div></div></div></div></div>
+      </section>
+
+      <section class="section section-muted" id="precios">
+        <div class="container"><div class="section-heading centered"><span class="eyebrow">Empieza gratis</span><h2>Tu historia no debería<br /><em>tener barreras.</em></h2><p>Prueba el flujo completo sin tarjeta. Actualiza cuando tu portfolio esté listo para salir al mundo.</p></div><div class="pricing-grid"><article class="price-card"><span class="price-label">Gratis</span><h3>Para empezar</h3><p>Descubre qué puede contar tu GitHub.</p><div class="price">0 €<small> para siempre</small></div><ul><li>1 portfolio</li><li>Vista previa pública</li><li>Exportación HTML básica</li><li>Estilo base y marca Portia</li><li>Sin logo ni tipografías avanzadas</li></ul><small class="price-upgrade-note">¿Quieres logo, fuentes y más estilo? Pásate a Pro.</small><button class="button button-secondary auth-trigger">Empezar gratis</button></article><article class="price-card featured"><span class="popular">Más elegido</span><span class="price-label">Pro</span><h3>Para enseñar más</h3><p>Todo lo que necesitas para avanzar.</p><div class="price">7 €<small>/ mes</small></div><ul><li>Hasta 5 portfolios</li><li>Exportación HTML sin límite</li><li>Logo generado con tus iniciales</li><li>Tipografías y estilos avanzados</li><li>Navbar, footer y página completa</li></ul><button class="button button-primary auth-trigger">Crear mi portfolio <span>→</span></button></article><article class="price-card"><span class="price-label">Descarga</span><h3>Para llevártelo</h3><p>Tu portfolio en un paquete listo.</p><div class="price">12 €<small> pago único</small></div><ul><li>Hasta 5 portfolios</li><li>5 exportaciones</li><li>Logo y tipografía incluidos</li><li>Estilos avanzados para descargar</li><li>Guía de despliegue</li></ul><button class="button button-secondary auth-trigger">Ver detalles</button></article></div></div>
+      </section>
+
+      <section class="section faq-section" id="faq"><div class="container faq-grid"><div><span class="eyebrow">Preguntas frecuentes</span><h2>Claro desde<br /><em>el principio.</em></h2><p>Sin letra pequeña y sin prometerte una IA que lo sabe todo.</p></div><div class="faq-list"><details open><summary>¿Qué datos usa Portia?<span>+</span></summary><p>Empezamos con los datos públicos de tu perfil de GitHub: repositorios, lenguajes, topics, README y contribuciones. Tú decides qué se muestra.</p></details><details><summary>¿La IA inventa información?<span>+</span></summary><p>No debería. Las cifras las calcula el código y los textos se generan solo a partir de los hechos que seleccionas. Podrás revisar y editar cada resultado.</p></details><details><summary>¿Puedo probarlo sin crear una cuenta?<span>+</span></summary><p>Sí. La vista previa pública de un usuario de GitHub es gratuita. Para guardar, descargar o publicar tendrás que verificar tu identidad.</p></details><details><summary>¿Puedo cancelar cuando quiera?<span>+</span></summary><p>En el plan Pro puedes cancelar al final del periodo de facturación. Tu contenido no se borra y podrás recuperarlo si vuelves.</p></details></div></div></section>
+
+      <section class="cta-section"><div class="container cta-inner"><div><span class="eyebrow">Tu siguiente paso</span><h2>Haz que tu trabajo<br /><em>hable por ti.</em></h2></div><button class="button button-light auth-trigger">Crear mi portfolio <svg class="button-icon"><use href="#icon-arrow"></use></svg></button></div></section>
+    </main>
+
+    <footer class="footer"><div class="container footer-top"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg><use href="#icon-portia"></use></svg></span><span>portia</span></a><p>Tu código ya cuenta tu historia.</p><div class="footer-links"><a href="#como-funciona">Producto</a><a href="#faq">Ayuda</a><a href="#top">Privacidad</a><a href="#top">Términos</a></div><div class="social-links"><a href="#top" aria-label="GitHub"><svg><use href="#icon-github"></use></svg></a><a href="#top" aria-label="LinkedIn"><svg><use href="#icon-linkedin"></use></svg></a></div></div><div class="container footer-bottom"><span>© 2026 Portia. Hecho para quienes construyen.</span><span>Diseñado con intención.</span></div></footer>
+
+    <div class="modal-backdrop" id="auth-modal" aria-hidden="true">
+      <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+        <button class="modal-close" type="button" aria-label="Cerrar">×</button>
+        <div class="auth-mark"><span class="brand-mark"><svg><use href="#icon-portia"></use></svg></span></div>
+        <span class="eyebrow">Tu espacio en Portia</span>
+        <h2 id="auth-title">Empieza a contar<br /><em>tu historia.</em></h2>
+        <div class="auth-tabs" role="tablist" aria-label="Acceso">
+          <button class="auth-tab active" type="button" role="tab" aria-selected="true" data-auth-mode="login">Entrar</button>
+          <button class="auth-tab" type="button" role="tab" aria-selected="false" data-auth-mode="register">Crear cuenta</button>
+        </div>
+        <form class="auth-form" id="auth-form">
+          <div class="field-group register-only"><label for="auth-name">Tu nombre</label><input id="auth-name" name="name" autocomplete="name" maxlength="80" placeholder="Daniel Clavijo" /></div>
+          <div class="field-group"><label for="auth-email">Email</label><input id="auth-email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="tu@email.com" required /></div>
+          <div class="field-group"><label for="auth-password">Contraseña</label><div class="password-field"><input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="10" maxlength="128" placeholder="Mínimo 10 caracteres" required /><button class="password-toggle" type="button" aria-label="Mostrar contraseña">Mostrar</button></div></div>
+          <div class="field-group register-only"><label for="auth-password-confirm">Repite la contraseña</label><input id="auth-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="10" maxlength="128" placeholder="Repite tu contraseña" /></div>
+          <label class="consent-row register-only"><input id="auth-consent" type="checkbox" required /><span>Acepto guardar mi cuenta solo en este navegador. No se envían datos a ningún servidor.</span></label>
+          <p class="auth-feedback" id="auth-feedback" role="alert"></p>
+          <button class="button button-dark" id="auth-submit" type="submit">Entrar <span>→</span></button>
+        </form>
+        <small class="auth-security"><span>◆</span> Protegido localmente con Web Crypto · Sin conexiones externas</small>
+      </section>
+    </div>
+    <section class="dashboard" id="dashboard" aria-hidden="true">
+      <div class="container dashboard-shell">
+        <div class="dashboard-top"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg><use href="#icon-portia"></use></svg></span><span>portia</span></a><div class="dashboard-actions"><button class="button button-ghost plan-button" id="open-plan-modal" type="button"><span id="plan-label">Gratis</span> · <span id="portfolio-limit-label">0/1</span></button><button class="theme-toggle dashboard-theme-toggle" type="button" aria-label="Cambiar tema"><span class="theme-switch"><svg class="theme-icon"><use href="#icon-sun"></use></svg><span class="theme-switch-knob"></span><svg class="theme-icon moon"><use href="#icon-moon"></use></svg></span></button><span class="user-chip" id="user-chip"></span><button class="button button-ghost logout-button" type="button">Cerrar sesión</button></div></div>
+        <div class="dashboard-heading"><div><span class="eyebrow">Tu espacio privado</span><h2>Hola, <em id="dashboard-name">creador</em>.</h2><p>Aquí empieza la historia de tu próximo portfolio.</p></div><button class="button button-primary" type="button" id="new-portfolio">Crear portfolio <span>→</span></button></div>
+        <nav class="dashboard-nav" aria-label="Secciones de tu espacio"><button class="dashboard-tab active" type="button" data-dashboard-view="overview">Resumen</button><button class="dashboard-tab" type="button" data-dashboard-view="profile">Mi perfil</button><button class="dashboard-tab" type="button" data-dashboard-view="portfolio">Mi portfolio</button></nav>
+        <div class="dashboard-view active" data-dashboard-panel="overview"><div class="dashboard-grid"><article class="dashboard-card portfolio-empty"><div class="empty-art"><span class="brand-mark"><svg><use href="#icon-portia"></use></svg></span><i></i><i></i><i></i></div><span class="card-kicker">Primer portfolio</span><h3>Tu trabajo merece un lugar.</h3><p>Conecta tus fuentes y crea una primera presentación profesional editable.</p><button class="button button-secondary" type="button" id="connect-github"><svg class="button-icon"><use href="#icon-github"></use></svg> Conectar GitHub <svg class="button-icon"><use href="#icon-arrow"></use></svg></button></article><article class="dashboard-card privacy-card"><div class="card-icon"><svg><use href="#icon-shield"></use></svg></div><h3>Privacidad primero</h3><p>Esta cuenta está aislada en tu navegador. Portia no hace peticiones de red en esta demo y no puede leer información fuera de este sitio.</p><div class="privacy-status"><span></span> Almacenamiento local activo</div></article><article class="dashboard-card account-card"><div class="card-icon"><svg><use href="#icon-grid"></use></svg></div><h3>Tu cuenta</h3><dl><div><dt>Email</dt><dd id="account-email"></dd></div><div><dt>Plan</dt>        <dd id="account-plan">Gratis</dd></div>        <div><dt>Fuentes</dt><dd id="account-sources">1 activa</dd></div><div><dt>Portfolios</dt><dd id="account-portfolio-limit">0/1</dd></div></dl><button class="text-link" type="button" id="delete-account">Eliminar cuenta <svg class="button-icon"><use href="#icon-arrow"></use></svg></button></article></div></div>
+        <div class="dashboard-view" data-dashboard-panel="profile"><div class="workspace-card"><div class="workspace-title"><div><span class="eyebrow">Identidad profesional</span><h3>Tu perfil</h3><p>Estos datos completan tus portfolios y se guardan solo en este navegador.</p></div><span class="workspace-badge">Base local</span></div><form class="workspace-form" id="profile-form"><div class="form-grid"><div class="field-group"><label for="profile-name">Nombre</label><input id="profile-name" name="name" maxlength="80" required /></div><div class="field-group"><label for="profile-role">Titular profesional</label><input id="profile-role" name="role" maxlength="100" placeholder="Frontend developer" /></div><div class="field-group"><label for="profile-location">Ubicación</label><input id="profile-location" name="location" maxlength="80" placeholder="Málaga, España" /></div><div class="field-group"><label for="profile-website">Web o enlace público</label><input id="profile-website" name="website" type="url" maxlength="180" placeholder="https://tuweb.com" /></div><div class="field-group"><label for="profile-github">Usuario de GitHub</label><input id="profile-github" name="githubUsername" maxlength="39" pattern="[A-Za-z0-9-]+" placeholder="tu-usuario" /></div><div class="field-group"><label for="profile-linkedin">Perfil de LinkedIn</label><input id="profile-linkedin" name="linkedinUrl" type="url" maxlength="180" placeholder="https://www.linkedin.com/in/tu-perfil" /></div><div class="field-group"><label for="profile-notion">Página pública de Notion</label><input id="profile-notion" name="notionUrl" type="url" maxlength="180" placeholder="https://tu-espacio.notion.site/..." /></div></div><div class="field-group"><label for="profile-bio">Sobre ti</label><textarea id="profile-bio" name="bio" maxlength="500" rows="5" placeholder="Cuenta brevemente qué haces y qué te interesa construir."></textarea></div><button class="button button-primary" type="submit">Guardar perfil <span>→</span></button></form><p class="integration-disclaimer"><svg class="inline-icon"><use href="#icon-shield"></use></svg> Solo se consultan fuentes cuando pulsas importar. LinkedIn y Notion se guardan como referencias; no se extrae contenido sin autorización.</p></div></div>
+        <div class="dashboard-view" data-dashboard-panel="portfolio"><div class="portfolio-workspace"><div class="workspace-card"><div class="workspace-title"><div><span class="eyebrow">Editor básico</span><h3>Crea tu portfolio</h3><p>Usa tu perfil y tus repositorios para crear una primera versión.</p></div><span class="workspace-badge" id="portfolio-status">Sin crear</span></div><div class="import-row"><button class="button button-secondary" type="button" id="import-github"><svg class="button-icon"><use href="#icon-github"></use></svg> Importar desde GitHub</button><span id="github-import-status" class="field-note">Necesitas guardar un usuario de GitHub en tu perfil.</span></div><div class="github-project-picker" id="github-project-picker" hidden><div class="picker-heading"><div><span class="eyebrow">Selección manual</span><h4>Elige proyectos para tu galería</h4><p id="github-project-picker-copy">No se han encontrado proyectos publicados en el README de perfil.</p></div><span id="github-project-picker-count"></span></div><div class="github-project-options" id="github-project-options"></div><button class="button button-primary" type="button" id="add-github-projects">Añadir seleccionados</button></div><form class="workspace-form" id="portfolio-form"><div class="field-group"><label for="portfolio-title">Título</label><input id="portfolio-title" name="title" maxlength="100" placeholder="Javier Díaz · Frontend developer" required /></div><div class="field-group"><label for="portfolio-intro">Presentación</label><textarea id="portfolio-intro" name="intro" maxlength="500" rows="4" placeholder="Construyo interfaces que hacen que las cosas complejas se sientan sencillas."></textarea></div><div class="form-grid"><div class="field-group"><label for="portfolio-skills">Tecnologías</label><input id="portfolio-skills" name="skills" maxlength="180" placeholder="React, TypeScript, Node.js" /></div><div class="field-group"><label for="portfolio-project">Proyecto destacado</label><input id="portfolio-project" name="project" maxlength="100" placeholder="open-source-dashboard" /></div><div class="field-group"><label for="portfolio-project-description">Descripción del proyecto</label><input id="portfolio-project-description" name="projectDescription" maxlength="180" placeholder="Dashboard para equipos" /></div>        <div class="field-group"><label for="portfolio-template">Plantilla</label><select id="portfolio-template" name="template"><option value="minimal">Minimal</option><option value="grid">Grid</option><option value="line">Line</option></select></div>        <div class="field-group portfolio-theme-field"><label for="portfolio-theme">Temática visual</label><select id="portfolio-theme" name="theme"><option value="minimal">Minimalista · limpio y sobrio</option><option value="joyful">Alegre · color y energía</option><option value="playful">Divertida · formas expresivas</option><option value="elegant">Elegante · editorial y refinada</option><option value="tech">Tech · oscuro y futurista</option></select><small class="field-note">La temática cambia la paleta, los detalles y la personalidad del portfolio.</small></div><div class="field-group"><label for="portfolio-color-mode">Tema de la web exportada</label><select id="portfolio-color-mode" name="colorMode"><option value="light">Claro</option><option value="dark">Oscuro</option></select><small class="field-note">Independiente del tema de la aplicación.</small></div><div class="field-group portfolio-branding-heading"><span class="form-section-label">Branding y logo personalizado</span><small class="field-note">Define cómo aparecerá tu marca en la navegación y en la exportación.</small></div><div class="field-group"><label for="portfolio-brand-name">Nombre de marca</label><input id="portfolio-brand-name" name="brandName" maxlength="40" placeholder="Tu nombre o estudio" /></div><div class="field-group"><label for="portfolio-brand-initials">Iniciales del logo</label><input id="portfolio-brand-initials" name="brandInitials" maxlength="3" placeholder="JD" /></div><div class="field-group"><label for="portfolio-brand-color">Color de marca</label><input id="portfolio-brand-color" name="brandColor" type="color" value="#6440ec" /></div><div class="field-group"><label for="portfolio-logo-style">Estilo del logo</label><select id="portfolio-logo-style" name="logoStyle"><option value="monogram">Monograma</option><option value="wordmark">Solo nombre</option>        <option value="badge">Insignia</option></select></div></div>        <div class="portfolio-actions"><button class="button button-secondary" id="save-portfolio-draft" type="button">Guardar borrador</button><button class="button button-primary" type="submit">Crear portfolio <span>→</span></button><button class="button button-ghost" id="export-portfolio" type="button">Exportar gratis <span>↓</span></button></div></form></div>        <article class="portfolio-live-preview" id="portfolio-live-preview"><div class="preview-brand" id="preview-brand"><span class="preview-brand-mark">P</span><strong>Tu marca</strong></div><span class="eyebrow">Vista previa</span><h4 id="preview-title">Tu nombre · Tu especialidad</h4><p id="preview-intro">Tu presentación aparecerá aquí.</p><div class="preview-tags" id="preview-skills"><span>Tus habilidades</span></div><div class="preview-project"><small>PROYECTO DESTACADO</small><strong id="preview-project-name">Añade un proyecto para mostrarlo</strong><span id="preview-project-description">Descripción breve del proyecto</span></div><div class="created-portfolio-meta" id="created-portfolio-meta"></div><button class="button button-primary preview-open-button" id="open-created-portfolio" type="button" hidden>Ver portfolio creado <span>→</span></button></article></div><article class="portfolio-public-preview" id="portfolio-public-preview" hidden><div class="public-preview-heading"><span class="eyebrow">Portfolio creado</span><button class="icon-button" id="close-created-portfolio" type="button" aria-label="Cerrar vista previa">×</button></div><h3 id="public-preview-title"></h3><p id="public-preview-intro"></p><div class="preview-tags" id="public-preview-skills"></div><div class="project-gallery-heading"><h4>Proyectos</h4><span id="public-project-count"></span></div><div class="project-gallery" id="public-project-gallery"></div><small class="public-preview-note">Esta vista está guardada en tu base local. Para publicar una URL pública hará falta un backend y hosting.</small></article></div>
+      </div>
+    </section>
+    <div class="toast" id="toast" role="status"></div>
+    <div class="modal-backdrop" id="plan-modal" aria-hidden="true">
+      <section class="plan-modal-panel" role="dialog" aria-modal="true" aria-labelledby="plan-modal-title">
+        <button class="modal-close" id="plan-modal-close" type="button" aria-label="Cerrar">×</button>
+        <span class="eyebrow">Planes de Portia</span>
+        <h2 id="plan-modal-title">Elige cuánto quieres construir</h2>
+        <p class="modal-copy">La selección se guarda en este navegador. El cobro real se conectará a Stripe cuando exista backend.</p>
+        <div class="plan-options">
+          <button class="plan-option" type="button" data-plan="free"><strong>Gratis</strong><span>1 portfolio · 1 exportación/mes · estilo base · sin logo ni fuentes avanzadas</span><b>0 €</b></button>
+          <button class="plan-option" type="button" data-plan="pro"><strong>Pro</strong><span>Hasta 5 portfolios · exportación ilimitada · logo · fuentes · estilos avanzados</span><b>7 €/mes</b></button>
+          <button class="plan-option" type="button" data-plan="download"><strong>Descarga</strong><span>Hasta 5 portfolios · 5 exportaciones · logo · fuentes · paquete listo</span><b>12 € pago único</b></button>
+        </div>
+        <p class="plan-feedback" id="plan-feedback"></p>
+      </section>
+    </div>
+    <div class="modal-backdrop project-modal" id="project-modal" aria-hidden="true">
+      <section class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <button class="modal-close" id="project-modal-close" type="button" aria-label="Cerrar detalles">×</button>
+        <img id="project-modal-image" class="project-modal-image" alt="" />
+        <span class="eyebrow">Proyecto</span>
+        <h2 id="project-modal-title"></h2>
+        <p id="project-modal-description"></p>
+        <div class="project-modal-topline"><span id="project-modal-language"></span><span id="project-modal-stars"></span></div>
+        <div class="preview-tags" id="project-modal-topics"></div>
+        <div class="project-modal-actions">
+          <a class="button button-primary" id="project-modal-link" href="#" target="_self" rel="noopener noreferrer">Abrir en GitHub <span>→</span></a>
+          <a class="button button-secondary" id="project-modal-readme" href="#" target="_self" rel="noopener noreferrer" hidden>Ver README <span>→</span></a>
+          <a class="button button-secondary" id="project-modal-homepage" href="#" target="_self" rel="noopener noreferrer" hidden>Visitar web <span>→</span></a>
+        </div>
+      </section>
+    </div>
+    <script src="database.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
